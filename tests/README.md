@@ -2,16 +2,35 @@
 
 **Comprehensive tests across all 3 deployment URLs** with detailed manual testing guides.
 
+## Setup
+
+1. **Create `.env` file** (copy from `.env.example`):
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Fill in your deployment URL** (for remote/playground tests):
+   ```env
+   REMOTE_BASE_URL=https://your-app-abc123.alpic.live
+   ```
+
+3. **Run tests** - environment variables are automatically loaded:
+   ```bash
+   npm run test:local        # No REMOTE_BASE_URL needed
+   npm run test:remote       # Requires REMOTE_BASE_URL in .env
+   npm run test:playground   # Requires REMOTE_BASE_URL in .env
+   ```
+
 ## Quick Start
 
 ```bash
-# Test local server
+# Test local server (no .env setup needed)
 npm run test:local
 
-# Test remote Alpic deployment
+# Test remote Alpic deployment (requires REMOTE_BASE_URL in .env)
 npm run test:remote
 
-# Test playground interface
+# Test playground interface (requires REMOTE_BASE_URL in .env)
 npm run test:playground
 
 # Test ALL environments
@@ -20,6 +39,8 @@ npm run test:all
 # Watch mode
 npm test -- --watch
 ```
+
+**Note:** All npm commands automatically load variables from `.env` and `.env.local` files using `dotenv-cli`.
 
 ## Test Structure
 
