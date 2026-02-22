@@ -38,8 +38,8 @@ tests/
 | Environment | URL | What's Tested |
 |-------------|-----|---------------|
 | **Local** | http://localhost:3000 | Dev server, MCP endpoint, localhost access |
-| **Remote** | https://your-app-abc123.alpic.live | Production deployment, HTTPS, public access |
-| **Playground** | https://your-app-abc123.alpic.live/try | Playground UI, testing interface |
+| **Remote** | Set via REMOTE_BASE_URL env var | Production deployment, HTTPS, public access |
+| **Playground** | Set via REMOTE_BASE_URL env var + /try | Playground UI, testing interface |
 
 ## Test Results Summary
 
@@ -85,7 +85,7 @@ Each test run provides **detailed manual testing instructions** with:
 → Manual Testing Guide for REMOTE:
 
   🧪 Testing MCP Tools:
-  1. Open playground: https://your-app-abc123.alpic.live/try
+  1. Open playground: ${REMOTE_BASE_URL}/try
   2. Test add-link tool:
      {"url": "https://test.com", "title": "Test", "tags": ["test"]}
   3. Test update-link tool:
@@ -163,7 +163,7 @@ This test suite demonstrates:
    - Check both widgets display
 
 3. **Test remote deployment**:
-   - Open https://your-app-abc123.alpic.live/try
+   - Set REMOTE_BASE_URL and open ${REMOTE_BASE_URL}/try
    - Repeat tool testing
    - Verify widgets work
    - Confirm demo data appears

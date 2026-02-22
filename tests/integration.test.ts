@@ -5,19 +5,21 @@ import { describe, it, expect, beforeAll } from 'vitest';
  *
  * Tests actual server responses from:
  * 1. Local server (http://localhost:3000)
- * 2. Remote Alpic deployment (https://your-app-abc123.alpic.live)
- * 3. Playground (https://your-app-abc123.alpic.live/try)
+ * 2. Remote Alpic deployment (set via REMOTE_BASE_URL env var)
+ * 3. Playground (set via REMOTE_BASE_URL env var, adds /try)
+ *
+ * Usage:
+ *   TEST_ENV=local npm test              # Tests http://localhost:3000
+ *   TEST_ENV=remote REMOTE_BASE_URL=https://your-app-abc123.alpic.live npm test
+ *   TEST_ENV=playground REMOTE_BASE_URL=https://your-app-abc123.alpic.live npm test
  */
 
-const URLS = {
-  local: 'http://localhost:3000',
-  remote: 'https://your-app-abc123.alpic.live',
-  playground: 'https://your-app-abc123.alpic.live/try'
-};
+import { TEST_ENVIRONMENTS } from './test.config';
 
 // Determine which URL to test based on TEST_ENV
 const TEST_ENV = process.env.TEST_ENV || 'local';
-const BASE_URL = URLS[TEST_ENV as keyof typeof URLS];
+const config = TEST_ENVIRONMENTS[TEST_ENV as keyof typeof TEST_ENVIRONMENTS];
+const BASE_URL = config.baseUrl;
 
 describe(`Integration Tests - ${TEST_ENV.toUpperCase()}`, () => {
 
@@ -154,7 +156,8 @@ describe(`Integration Tests - ${TEST_ENV.toUpperCase()}`, () => {
     it('should document how to test MCP tools', () => {
       console.log(`\n→ Manual Testing Guide for ${TEST_ENV.toUpperCase()}:`);
       console.log(`\n  🧪 Testing MCP Tools:`);
-      console.log(`  1. Open playground: ${TEST_ENV === 'local' ? 'http://localhost:3000/try' : BASE_URL + (TEST_ENV === 'playground' ? '' : '/try')}`);
+      const playgroundUrl = TEST_ENV === 'local' ? 'http://localhost:3000/try' : (TEST_ENV === 'playground' ? BASE_URL : `${BASE_URL}/try`);
+      console.log(`  1. Open playground: ${playgroundUrl}`);
       console.log(`  2. Test add-link tool:`);
       console.log(`     {"url": "https://test.com", "title": "Test", "tags": ["test"]}`);
       console.log(`  3. Test update-link tool:`);

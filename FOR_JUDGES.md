@@ -8,7 +8,7 @@
 
 A link manager demonstrating **bidirectional AI-UI collaboration** using MCP + Skybridge.
 
-**Live:** https://your-app-abc123.alpic.live/try
+**Deploy:** `npx alpic deploy` to create your own instance
 
 ---
 

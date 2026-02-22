@@ -10,8 +10,10 @@ AI-powered link manager with **bidirectional AI-UI collaboration**.
 
 ## Live Demo
 
-- **App:** https://your-app-abc123.alpic.live
-- **Playground:** https://your-app-abc123.alpic.live/try
+Deploy your own instance using:
+```bash
+npx alpic deploy
+```
 
 ---
 

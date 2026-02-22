@@ -31,11 +31,12 @@
 - [x] Skybridge build passing
 - [x] Alpic deployment ready
 
-## Live Deployment
+## Deployment
 
-- **App:** https://your-app-abc123.alpic.live
-- **Playground:** https://your-app-abc123.alpic.live/try
-- **MCP:** https://your-app-abc123.alpic.live/mcp
+Deploy your own instance:
+```bash
+npx alpic deploy
+```
 
 ## Test Commands
 
