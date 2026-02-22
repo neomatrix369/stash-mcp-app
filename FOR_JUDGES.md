@@ -87,6 +87,8 @@ return {
 };
 ```
 
+**Want all 9 patterns?** See [FOR_JUDGES_DETAILED.md](FOR_JUDGES_DETAILED.md) for complete patterns with full code examples.
+
 ---
 
 ## Tech Stack
@@ -115,7 +117,7 @@ web/src/components/     → StashCard, FilterTabs, AddLinkForm, DeadlineRadar
 Want to verify everything works?
 
 ```bash
-npm run test:local  # 72 tests, all passing
+npm run test:local  # 24 tests, all passing
 ```
 
 **Full test guide:** See **[tests/README.md](tests/README.md)** for testing all environments
