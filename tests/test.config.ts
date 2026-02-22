@@ -2,8 +2,8 @@
 export const TEST_ENVIRONMENTS = {
   local: {
     name: 'Local',
-    baseUrl: 'http://localhost:53362',
-    mcpUrl: 'http://localhost:53362/mcp'
+    baseUrl: 'http://localhost:3000',
+    mcpUrl: 'http://localhost:3000/mcp'
   },
   remote: {
     name: 'Remote (Alpic)',

@@ -37,7 +37,7 @@ tests/
 
 | Environment | URL | What's Tested |
 |-------------|-----|---------------|
-| **Local** | http://localhost:53362 | Dev server, MCP endpoint, localhost access |
+| **Local** | http://localhost:3000 | Dev server, MCP endpoint, localhost access |
 | **Remote** | https://your-app-abc123.alpic.live | Production deployment, HTTPS, public access |
 | **Playground** | https://your-app-abc123.alpic.live/try | Playground UI, testing interface |
 
@@ -157,7 +157,7 @@ This test suite demonstrates:
    ```
 
 2. **Test locally via playground**:
-   - Open http://localhost:53362/try
+   - Open http://localhost:3000/try
    - Follow testing guide from test output
    - Verify all 5 tools work
    - Check both widgets display

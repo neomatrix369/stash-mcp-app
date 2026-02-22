@@ -4,13 +4,13 @@ import { describe, it, expect, beforeAll } from 'vitest';
  * Real Integration Tests - Tests all 3 deployment URLs
  *
  * Tests actual server responses from:
- * 1. Local server (http://localhost:53362)
+ * 1. Local server (http://localhost:3000)
  * 2. Remote Alpic deployment (https://your-app-abc123.alpic.live)
  * 3. Playground (https://your-app-abc123.alpic.live/try)
  */
 
 const URLS = {
-  local: 'http://localhost:53362',
+  local: 'http://localhost:3000',
   remote: 'https://your-app-abc123.alpic.live',
   playground: 'https://your-app-abc123.alpic.live/try'
 };
@@ -154,7 +154,7 @@ describe(`Integration Tests - ${TEST_ENV.toUpperCase()}`, () => {
     it('should document how to test MCP tools', () => {
       console.log(`\n→ Manual Testing Guide for ${TEST_ENV.toUpperCase()}:`);
       console.log(`\n  🧪 Testing MCP Tools:`);
-      console.log(`  1. Open playground: ${TEST_ENV === 'local' ? 'http://localhost:53362/try' : BASE_URL + (TEST_ENV === 'playground' ? '' : '/try')}`);
+      console.log(`  1. Open playground: ${TEST_ENV === 'local' ? 'http://localhost:3000/try' : BASE_URL + (TEST_ENV === 'playground' ? '' : '/try')}`);
       console.log(`  2. Test add-link tool:`);
       console.log(`     {"url": "https://test.com", "title": "Test", "tags": ["test"]}`);
       console.log(`  3. Test update-link tool:`);
