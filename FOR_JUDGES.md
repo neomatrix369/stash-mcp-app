@@ -8,7 +8,21 @@
 
 A link manager demonstrating **bidirectional AI-UI collaboration** using MCP + Skybridge.
 
-**Deploy:** `npx alpic deploy` to create your own instance
+---
+
+## Quick Setup (2 minutes)
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Start local server
+npx skybridge start
+
+# 3. Open http://localhost:3000
+```
+
+**Want to deploy?** `npx alpic deploy` (requires ALPIC_API_KEY in `.env`)
 
 ---
 
@@ -96,6 +110,18 @@ web/src/components/     → StashCard, FilterTabs, AddLinkForm, DeadlineRadar
 
 ---
 
+## Testing (Optional)
+
+Want to verify everything works?
+
+```bash
+npm run test:local  # 72 tests, all passing
+```
+
+**Full test guide:** See **[tests/README.md](tests/README.md)** for testing all environments
+
+---
+
 ## Navigation
 
 | Next | Description |
@@ -103,6 +129,7 @@ web/src/components/     → StashCard, FilterTabs, AddLinkForm, DeadlineRadar
 | **[STATUS.md](STATUS.md)** | Full checklist of what's implemented |
 | **[FOR_JUDGES_DETAILED.md](FOR_JUDGES_DETAILED.md)** | All 9 patterns with full code, copy-paste nuggets |
 | **[SPEC.md](SPEC.md)** | Complete technical specification |
+| **[tests/README.md](tests/README.md)** | Complete testing guide |
 | **[ROADMAP.md](ROADMAP.md)** | Future enhancements (Stage 2/3) |
 
 ---

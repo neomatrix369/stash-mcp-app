@@ -75,8 +75,30 @@ Open http://localhost:3000
 ## Deploy
 
 ```bash
+# Create .env file and add your API key
+cp .env.example .env
+# Edit .env and add: ALPIC_API_KEY=your-key-here
+
+# Deploy
 npx alpic deploy
 ```
+
+---
+
+## Testing
+
+Comprehensive test suite with 72 tests across all environments.
+
+**Quick test:**
+```bash
+npm run test:local  # Tests local server (no setup needed)
+```
+
+**Full test suite:**
+See **[tests/README.md](tests/README.md)** for complete testing guide including:
+- Setting up `.env` for remote testing
+- Testing all 3 environments (local/remote/playground)
+- Manual verification steps
 
 ---
 

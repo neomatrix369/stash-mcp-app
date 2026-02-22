@@ -30,6 +30,8 @@
 - [x] TypeScript type-safe hooks
 - [x] Skybridge build passing
 - [x] Alpic deployment ready
+- [x] Comprehensive test suite (72 tests, all passing)
+- [x] Environment variable management with dotenv-cli
 
 ## Deployment
 
@@ -47,8 +49,22 @@ npx alpic deploy
 "What links do I have?"     → Claude reads widget state
 ```
 
+## Automated Testing
+
+**Test suite:** 72 tests across 3 environments (local, remote, playground)
+- ✅ Integration tests for all deployment URLs
+- ✅ Smoke tests for features and configuration
+- ✅ Manual testing guides included
+
+**Quick test:**
+```bash
+npm run test:local  # All 24 tests pass
+```
+
+**Full guide:** See [tests/README.md](tests/README.md) for complete testing documentation
+
 ---
 
 ## Navigation
 
-← [README.md](README.md) | [ROADMAP.md](ROADMAP.md) → Future enhancements
+← [README.md](README.md) | [tests/README.md](tests/README.md) → Testing guide | [ROADMAP.md](ROADMAP.md) → Future enhancements
