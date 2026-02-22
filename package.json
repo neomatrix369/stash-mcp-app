@@ -8,7 +8,12 @@
     "dev": "skybridge dev",
     "build": "skybridge build",
     "start": "skybridge start",
-    "deploy": "alpic deploy"
+    "deploy": "alpic deploy",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:local": "TEST_ENV=local vitest run",
+    "test:remote": "TEST_ENV=remote vitest run",
+    "test:all": "TEST_ENV=local vitest run && TEST_ENV=remote vitest run"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.26.0",
@@ -30,7 +35,8 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.2.0",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.8"
   },
   "engines": {
     "node": ">=24.13.1"

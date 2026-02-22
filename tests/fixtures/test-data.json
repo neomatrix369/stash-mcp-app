@@ -1,0 +1,17 @@
+{
+  "testLinks": [
+    {
+      "url": "https://example.com/test1",
+      "title": "Test Link 1",
+      "tags": ["test", "automation"],
+      "due_date": "2026-03-01T00:00:00Z"
+    },
+    {
+      "url": "https://example.com/test2",
+      "title": "Test Link 2",
+      "tags": ["test", "demo"]
+    }
+  ],
+  "bulkUpdateIds": ["1", "2"],
+  "expectedDemoLinks": 4
+}
