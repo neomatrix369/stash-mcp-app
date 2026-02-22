@@ -13,7 +13,7 @@ export function AddLinkForm({ onSubmit, onCancel, isLoading = false }: Props) {
   const [tags, setTags] = useState("");
   const [dueDate, setDueDate] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!url) return;
     onSubmit({
@@ -25,65 +25,104 @@ export function AddLinkForm({ onSubmit, onCancel, isLoading = false }: Props) {
     });
   };
 
-  const inputClass = "bg-gray-800 border border-gray-700 rounded-md px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none";
+  const inputClass = "bg-gray-800 border border-gray-700 rounded-md px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 ease-in-out";
+  const labelClass = "text-xs font-semibold text-gray-400 mb-1 block tracking-wider";
 
   return (
-    <form onSubmit={handleSubmit} className="px-6 py-4 border-b border-gray-800 bg-gray-900/50">
-      <div className="grid grid-cols-2 gap-3">
-        <input
-          type="url"
-          placeholder="URL *"
-          value={url}
-          onChange={e => setUrl(e.target.value)}
-          className={`col-span-2 ${inputClass}`}
-          required
-          disabled={isLoading}
-        />
-        <input
-          type="text"
-          placeholder="Title (optional)"
-          value={title}
-          onChange={e => setTitle(e.target.value)}
-          className={inputClass}
-          disabled={isLoading}
-        />
-        <input
-          type="date"
-          value={dueDate}
-          onChange={e => setDueDate(e.target.value)}
-          className={inputClass}
-          disabled={isLoading}
-        />
-        <input
-          type="text"
-          placeholder="Tags (comma separated)"
-          value={tags}
-          onChange={e => setTags(e.target.value)}
-          className={inputClass}
-          disabled={isLoading}
-        />
-        <input
-          type="text"
-          placeholder="Note (optional)"
-          value={note}
-          onChange={e => setNote(e.target.value)}
-          className={inputClass}
-          disabled={isLoading}
-        />
+    <form
+      onSubmit={handleSubmit}
+      className="px-6 py-4 border-b border-gray-800 bg-gray-900/50 animate-in slide-in-from-top-2 duration-300"
+      aria-label="Add new link form"
+    >
+      <h3 className="text-sm font-bold text-gray-200 mb-3">Add New Link</h3>
+      <div className="grid grid-cols-2 gap-4">
+        <div className="col-span-2">
+          <label htmlFor="url-input" className={labelClass}>
+            URL <span className="text-red-400">*</span>
+          </label>
+          <input
+            id="url-input"
+            type="url"
+            placeholder="https://example.com"
+            value={url}
+            onChange={e => setUrl(e.target.value)}
+            className={inputClass}
+            required
+            disabled={isLoading}
+            aria-required="true"
+          />
+        </div>
+        <div>
+          <label htmlFor="title-input" className={labelClass}>
+            TITLE
+          </label>
+          <input
+            id="title-input"
+            type="text"
+            placeholder="Link title"
+            value={title}
+            onChange={e => setTitle(e.target.value)}
+            className={inputClass}
+            disabled={isLoading}
+          />
+        </div>
+        <div>
+          <label htmlFor="due-date-input" className={labelClass}>
+            DUE DATE
+          </label>
+          <input
+            id="due-date-input"
+            type="date"
+            value={dueDate}
+            onChange={e => setDueDate(e.target.value)}
+            className={inputClass}
+            disabled={isLoading}
+          />
+        </div>
+        <div>
+          <label htmlFor="tags-input" className={labelClass}>
+            TAGS
+          </label>
+          <input
+            id="tags-input"
+            type="text"
+            placeholder="dev, docs, learning"
+            value={tags}
+            onChange={e => setTags(e.target.value)}
+            className={inputClass}
+            disabled={isLoading}
+          />
+        </div>
+        <div>
+          <label htmlFor="note-input" className={labelClass}>
+            NOTE
+          </label>
+          <input
+            id="note-input"
+            type="text"
+            placeholder="Optional note"
+            value={note}
+            onChange={e => setNote(e.target.value)}
+            className={inputClass}
+            disabled={isLoading}
+          />
+        </div>
       </div>
-      <div className="flex gap-2 mt-3">
+      <div className="flex gap-2 mt-4">
         <button
           type="submit"
-          className="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-md text-sm font-medium disabled:opacity-50"
+          className="px-4 py-2 bg-purple-600 hover:bg-purple-500 active:bg-purple-700 rounded-md text-sm font-medium text-white shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2 focus:ring-offset-gray-900"
           disabled={isLoading}
+          aria-label="Save link"
         >
-          {isLoading ? "Saving..." : "Save"}
+          {isLoading ? "💾 Saving..." : "💾 Save Link"}
         </button>
         <button
           type="button"
           onClick={onCancel}
-          className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-md text-sm text-gray-400"
+          className="px-4 py-2 bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-md text-sm font-medium text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-500/50 focus:ring-offset-2 focus:ring-offset-gray-900"
           disabled={isLoading}
+          aria-label="Cancel"
         >
           Cancel
         </button>
