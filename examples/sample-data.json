@@ -1,0 +1,77 @@
+[
+  {
+    "url": "https://docs.skybridge.tech",
+    "title": "Skybridge API Documentation",
+    "tags": ["mcp", "skybridge", "docs"],
+    "note": "Official framework documentation for building MCP apps with widgets and tools"
+  },
+  {
+    "url": "https://react.dev",
+    "title": "React Documentation",
+    "tags": ["react", "frontend", "javascript"],
+    "note": "Official React docs - hooks, components, and best practices",
+    "due_date": "2026-03-01"
+  },
+  {
+    "url": "https://supabase.com/docs",
+    "title": "Supabase Guide",
+    "tags": ["backend", "database", "postgres"],
+    "note": "Realtime database, auth, and storage documentation"
+  },
+  {
+    "url": "https://github.com/anthropics/claude-code",
+    "title": "Claude Code CLI",
+    "tags": ["ai", "tools", "claude"],
+    "note": "Official Claude CLI tool for developers"
+  },
+  {
+    "url": "https://tailwindcss.com/docs",
+    "title": "Tailwind CSS Docs",
+    "tags": ["css", "styling", "frontend"],
+    "note": "Utility-first CSS framework documentation"
+  },
+  {
+    "url": "https://clerk.com/docs",
+    "title": "Clerk Authentication",
+    "tags": ["auth", "backend", "security"],
+    "note": "User authentication and management platform docs"
+  },
+  {
+    "url": "https://www.typescriptlang.org/docs",
+    "title": "TypeScript Handbook",
+    "tags": ["typescript", "javascript", "docs"],
+    "note": "Complete guide to TypeScript language features",
+    "due_date": "2026-02-25"
+  },
+  {
+    "url": "https://zod.dev",
+    "title": "Zod Schema Validation",
+    "tags": ["typescript", "validation", "backend"],
+    "note": "TypeScript-first schema validation library"
+  },
+  {
+    "url": "https://alpic.dev",
+    "title": "Alpic Deployment Platform",
+    "tags": ["deployment", "hosting", "devops"],
+    "note": "One-click deployment for MCP apps and Skybridge projects"
+  },
+  {
+    "url": "https://www.anthropic.com/claude",
+    "title": "Claude AI",
+    "tags": ["ai", "llm", "anthropic"],
+    "note": "Next-generation AI assistant by Anthropic",
+    "due_date": "2026-02-28"
+  },
+  {
+    "url": "https://github.com/modelcontextprotocol/servers",
+    "title": "MCP Servers Repository",
+    "tags": ["mcp", "github", "examples"],
+    "note": "Collection of Model Context Protocol server examples"
+  },
+  {
+    "url": "https://docs.docker.com/get-started/overview",
+    "title": "Docker Overview",
+    "tags": ["docker", "devops", "containers"],
+    "note": "Getting started with Docker containerization"
+  }
+]
