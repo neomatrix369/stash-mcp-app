@@ -75,9 +75,9 @@ Open http://localhost:3000
 ## Deploy
 
 ```bash
-# Create .env file and add your API key
+# Copy .env.example to .env and fill in your API key
 cp .env.example .env
-# Edit .env and add: ALPIC_API_KEY=your-key-here
+# Edit .env and set: ALPIC_API_KEY=your-key-here
 
 # Deploy
 npx alpic deploy
