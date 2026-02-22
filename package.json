@@ -13,7 +13,8 @@
     "test:watch": "vitest",
     "test:local": "TEST_ENV=local vitest run",
     "test:remote": "TEST_ENV=remote vitest run",
-    "test:all": "TEST_ENV=local vitest run && TEST_ENV=remote vitest run"
+    "test:playground": "TEST_ENV=playground vitest run",
+    "test:all": "TEST_ENV=local vitest run && TEST_ENV=remote vitest run && TEST_ENV=playground vitest run"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.26.0",
