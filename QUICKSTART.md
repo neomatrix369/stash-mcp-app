@@ -657,6 +657,51 @@ stash-mcp-app/
 
 ---
 
+## Deploy to Production (Optional)
+
+Want to share your app or connect it to ChatGPT/Claude?
+
+### 1. Create Alpic Account
+
+1. Visit [app.alpic.ai](https://app.alpic.ai)
+2. Sign up (GitHub, Google, or email)
+3. Create or join a team
+
+### 2. Get API Key & Deploy
+
+```bash
+# Get API key from Alpic (team settings → API Keys → New API key)
+cp .env.example .env
+# Add: ALPIC_API_KEY=your-key-here
+
+# Deploy
+npx alpic deploy
+```
+
+Copy the deployed URL from the output (e.g., `https://your-app-abc123.alpic.live`)
+
+### 3. Connect to AI Assistants
+
+**ChatGPT:**
+- Settings → Integrations → MCP
+- Add your deployed URL
+
+**Claude Desktop:**
+```json
+{
+  "mcpServers": {
+    "stash": {
+      "type": "http",
+      "url": "https://your-app-abc123.alpic.live"
+    }
+  }
+}
+```
+
+**Test:** Say "Show my stash board" in ChatGPT or Claude!
+
+---
+
 ## Stage 2: Add Supabase (Optional, +45 min)
 
 See [SPEC.md](SPEC.md) for:

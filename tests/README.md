@@ -14,6 +14,14 @@ npm run test:local  # Works immediately - no .env needed!
 
 **When you need this:** After deploying with `npx alpic deploy`, to test your live deployment.
 
+**First time deploying?**
+- Create account at [app.alpic.ai](https://app.alpic.ai)
+- Get API key (team settings → API Keys)
+- Add `ALPIC_API_KEY=your-key` to `.env`
+- Run `npx alpic deploy`
+
+**Testing your deployment:**
+
 1. **Create `.env` file** (copy from `.env.example`):
    ```bash
    cp .env.example .env

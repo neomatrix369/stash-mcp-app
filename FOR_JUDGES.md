@@ -24,14 +24,22 @@ npx skybridge start
 
 ### Optional: Deploy Your Own Instance
 
+**Quick Setup:**
 ```bash
-# 1. Get API key from https://app.alpic.ai (team settings → API Keys)
-# 2. Create .env file
+# 1. Create account at https://app.alpic.ai (GitHub/Google/email signup)
+# 2. Get API key (team settings → API Keys → New API key)
+# 3. Create .env file
 cp .env.example .env
-# 3. Add your key: ALPIC_API_KEY=your-key-here
-# 4. Deploy
+# 4. Add your key: ALPIC_API_KEY=your-key-here
+# 5. Deploy
 npx alpic deploy
+# 6. Copy the deployed URL from output
 ```
+
+**Connect to ChatGPT/Claude:**
+- Use the deployed URL as your MCP server endpoint
+- In ChatGPT: Settings → Integrations → MCP → Add URL
+- In Claude Desktop: Add to `claude_desktop_config.json`
 
 No `.env` needed for local development - only for deployment!
 

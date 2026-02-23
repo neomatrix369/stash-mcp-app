@@ -74,6 +74,24 @@ Open http://localhost:3000
 
 ## Deploy
 
+### Step 1: Create Your Alpic Account
+
+If you don't have an Alpic account yet:
+
+1. Visit [app.alpic.ai](https://app.alpic.ai)
+2. Sign up with your preferred method (GitHub, Google, or email)
+3. Complete the onboarding flow
+4. Create or join a team (required for API access)
+
+### Step 2: Get Your API Key
+
+1. Sign in to [Alpic](https://app.alpic.ai)
+2. Click your team name → **API Keys** → **New API key**
+3. Copy the key (you won't see it again!)
+4. Add to `.env`: `ALPIC_API_KEY=your-key-here`
+
+### Step 3: Deploy Your App
+
 ```bash
 # Copy .env.example to .env and fill in your API key
 cp .env.example .env
@@ -83,12 +101,38 @@ cp .env.example .env
 npx alpic deploy
 ```
 
-### Getting Your Alpic API Key
+The deploy command will:
+- Build your app
+- Upload to Alpic
+- Return a public URL (e.g., `https://your-app-abc123.alpic.live`)
 
-1. Sign in to [Alpic](https://app.alpic.ai)
-2. Click your team name → **API Keys** → **New API key**
-3. Copy the key (you won't see it again!)
-4. Add to `.env`: `ALPIC_API_KEY=your-key-here`
+### Step 4: Connect to AI Assistants
+
+After deployment, connect your app to ChatGPT or Claude:
+
+**For ChatGPT:**
+1. Copy your deployed URL from the deploy output
+2. In ChatGPT, go to Settings → Integrations → MCP
+3. Add your URL: `https://your-app-abc123.alpic.live`
+4. Test: Say "Show my stash board"
+
+**For Claude Desktop:**
+1. Add to your `claude_desktop_config.json`:
+   ```json
+   {
+     "mcpServers": {
+       "stash": {
+         "type": "http",
+         "url": "https://your-app-abc123.alpic.live"
+       }
+     }
+   }
+   ```
+2. Restart Claude Desktop
+3. Test: Say "Show my stash board"
+
+**For Claude Code CLI:**
+- Your deployed app is automatically available if configured as an MCP server
 
 ---
 
