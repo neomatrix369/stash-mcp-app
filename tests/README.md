@@ -4,22 +4,41 @@
 
 ## Setup
 
+### Testing Local Development (No Setup Required)
+
+```bash
+npm run test:local  # Works immediately - no .env needed!
+```
+
+### Testing Remote Deployments (Requires .env Setup)
+
+**When you need this:** After deploying with `npx alpic deploy`, to test your live deployment.
+
 1. **Create `.env` file** (copy from `.env.example`):
    ```bash
    cp .env.example .env
    ```
 
-2. **Fill in your deployment URL** (for remote/playground tests):
+2. **Add your deployed URL** (get this from the deploy output):
    ```env
    REMOTE_BASE_URL=https://your-app-abc123.alpic.live
    ```
 
-3. **Run tests** - environment variables are automatically loaded:
+   💡 **Where to get this URL:** After running `npx alpic deploy`, copy the URL from the deployment success message.
+
+3. **Run remote tests**:
    ```bash
-   npm run test:local        # No REMOTE_BASE_URL needed
-   npm run test:remote       # Requires REMOTE_BASE_URL in .env
-   npm run test:playground   # Requires REMOTE_BASE_URL in .env
+   npm run test:remote       # Tests your deployed app
+   npm run test:playground   # Tests the /try playground interface
    ```
+
+### Environment Variables Quick Reference
+
+| Variable | Required For | How to Get |
+|----------|--------------|------------|
+| **None!** ✨ | `npm run test:local` | No setup needed |
+| **REMOTE_BASE_URL** | `npm run test:remote`<br>`npm run test:playground` | Your deployed app URL from `npx alpic deploy` |
+| **TEST_ENV** | (Auto-set by scripts) | Don't set manually - npm scripts handle this |
 
 ## Quick Start
 

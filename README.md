@@ -83,6 +83,50 @@ cp .env.example .env
 npx alpic deploy
 ```
 
+### Getting Your Alpic API Key
+
+1. Sign in to [Alpic](https://app.alpic.ai)
+2. Click your team name → **API Keys** → **New API key**
+3. Copy the key (you won't see it again!)
+4. Add to `.env`: `ALPIC_API_KEY=your-key-here`
+
+---
+
+## Environment Variables
+
+### Quick Reference
+
+| Variable | When You Need It | How to Get It |
+|----------|------------------|---------------|
+| **ALPIC_API_KEY** | 🚀 For deployment only | Get from [app.alpic.ai](https://app.alpic.ai) (team settings → API Keys) |
+| **REMOTE_BASE_URL** | 🧪 For testing remote deployments | Your deployed URL (e.g., `https://your-app-abc123.alpic.live`) |
+| **TEST_ENV** | ⚙️ Advanced testing | Auto-set by npm scripts - don't change manually |
+
+### Setup by Scenario
+
+**Just running locally?**
+```bash
+npm install
+npx skybridge start
+# No .env needed! ✨
+```
+
+**Want to deploy?**
+```bash
+cp .env.example .env
+# Add: ALPIC_API_KEY=your-key-from-alpic
+npx alpic deploy
+```
+
+**Want to test your deployment?**
+```bash
+# After deploying, add your deployed URL to .env:
+# REMOTE_BASE_URL=https://your-app-abc123.alpic.live
+npm run test:remote
+```
+
+See [.env.example](.env.example) for detailed comments on each variable.
+
 ---
 
 ## Testing

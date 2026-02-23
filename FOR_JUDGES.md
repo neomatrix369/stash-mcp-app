@@ -22,7 +22,18 @@ npx skybridge start
 # 3. Open http://localhost:3000
 ```
 
-**Want to deploy?** `npx alpic deploy` (requires ALPIC_API_KEY in `.env`)
+### Optional: Deploy Your Own Instance
+
+```bash
+# 1. Get API key from https://app.alpic.ai (team settings → API Keys)
+# 2. Create .env file
+cp .env.example .env
+# 3. Add your key: ALPIC_API_KEY=your-key-here
+# 4. Deploy
+npx alpic deploy
+```
+
+No `.env` needed for local development - only for deployment!
 
 ---
 
